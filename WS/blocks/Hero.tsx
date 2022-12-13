@@ -1,6 +1,16 @@
-const Hero = () => {
+import { storyblokEditable } from "@storyblok/react";
+import { Blok } from "../types/Types";
+
+type HeroProps = {
+  blok: Blok;
+};
+
+const Hero = ({ blok }: HeroProps) => {
   return (
-    <div className="realative h-screen w-full bg-primary fill-secondary">
+    <div
+      className="realative h-screen w-full bg-primary fill-secondary"
+      {...storyblokEditable(blok)}
+    >
       <svg
         className="absolute bottom-0 left-0"
         viewBox="0 0 1512 626"

@@ -1,3 +1,4 @@
+import { storyblokEditable } from "@storyblok/react";
 import ProjectPreview from "../components/ProjectPreview";
 import { Blok, SbFeaturedProjects } from "../types/Types";
 
@@ -7,7 +8,7 @@ type FeaturedProjectsProps = {
 
 const FeaturedProjects = ({ blok }: FeaturedProjectsProps) => {
   return (
-    <section>
+    <section {...storyblokEditable(blok)}>
       <h2 className="text-6xl font-bold text-center mb-16">{blok.heading}</h2>
       <div className="flex flex-col [&>*:nth-child(even)]:self-end w-full">
         {blok.projects.map((project) => (

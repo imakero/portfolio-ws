@@ -8,7 +8,7 @@ export type Link = {
   cached_url: string;
 };
 
-export type Blok<BlokType> = SbBlokData & BlokType;
+export type Blok<BlokType = {}> = SbBlokData & BlokType;
 
 export type SbFeaturedArticles = {
   title: string;
