@@ -1,11 +1,10 @@
-import { SbBlokData } from "@storyblok/react";
+import { SbBlokData, StoryData } from "@storyblok/react";
 import Link from "next/link";
-import { Story } from "../types/Types";
 import GitHubIcon from "./icons/GitHubIcon";
 import Navigation from "./Navigation";
 
 type HeaderProps = {
-  story: Story & { content: SbBlokData & { header_menu: SbBlokData[] } };
+  story: StoryData & { content: SbBlokData & { header_menu: SbBlokData[] } };
 };
 
 const Header = ({ story }: HeaderProps) => {

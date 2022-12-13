@@ -1,14 +1,13 @@
-import { SbBlokData } from "@storyblok/react";
+import { SbBlokData, StoryData } from "@storyblok/react";
 import Header from "../components/Header";
-import { Story } from "../types/Types";
 
 type LayoutProps = {
   children?: React.ReactNode;
-  story: Story & { content: SbBlokData & { header_menu: SbBlokData[] } };
+  story: StoryData & { content: SbBlokData & { header_menu: SbBlokData[] } };
 };
 
 const Layout = ({ children, story }: LayoutProps) => (
-  <div className="font-sans">
+  <div>
     <Header story={story} />
     {children}
   </div>

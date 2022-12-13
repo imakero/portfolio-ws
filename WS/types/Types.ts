@@ -1,9 +1,23 @@
+import { Richtext, SbBlokData } from "@storyblok/react";
+
 export type Link = {
   id: string;
   url: string;
   linktype: string;
   fieldtype: string;
   cached_url: string;
+};
+
+export type SbImage = {
+  id: number;
+  alt: string;
+  name: string;
+  focus: string;
+  title: string;
+  filename: string;
+  copyright: string;
+  fieldtype: string;
+  is_external_url: boolean;
 };
 
 export type Story = {
@@ -35,4 +49,11 @@ export type Content = {
   _uid: string;
   component: string;
   _editable: string;
+};
+
+export type Project = SbBlokData & {
+  image: SbImage;
+  title: string;
+  description: Richtext;
+  tag_list: string[];
 };

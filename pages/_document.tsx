@@ -15,7 +15,7 @@ export default function Document() {
           rel="stylesheet"
         />
       </Head>
-      <body>
+      <body className="bg-secondary font-sans">
         <Main />
         <NextScript />
       </body>

@@ -1,5 +1,3 @@
-import styles from "../styles/Home.module.css";
-
 import {
   useStoryblokState,
   getStoryblokApi,
@@ -18,10 +16,16 @@ type PageProps = {
 };
 
 export default function Home({ story, preview, navigation }: PageProps) {
-  story = useStoryblokState(story, {}, preview);
+  story = useStoryblokState(
+    story,
+    {
+      resolveRelations: ["featured_projects.projects"],
+    },
+    preview
+  );
 
   return (
-    <div>
+    <>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
@@ -30,7 +34,7 @@ export default function Home({ story, preview, navigation }: PageProps) {
       <Layout story={navigation}>
         <StoryblokComponent blok={story.content} />
       </Layout>
-    </div>
+    </>
   );
 }
 
@@ -40,6 +44,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   let sbParams = {
     version: "published",
     resolve_links: "url",
+    resolve_relations: ["featured_projects.projects"],
   };
 
   if (context.preview) {
