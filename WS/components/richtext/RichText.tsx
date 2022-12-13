@@ -20,6 +20,9 @@ const RichText = ({ document }: RichTextProps) => (
           </code>
         ),
       },
+      nodeResolvers: {
+        heading: (children, props) => <Heading {...props}>{children}</Heading>,
+      },
     })}
   </>
 );
