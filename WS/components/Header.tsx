@@ -5,7 +5,7 @@ import GitHubIcon from "./icons/GitHubIcon";
 import Navigation from "./Navigation";
 
 type HeaderProps = {
-  story: StoryData & { content: Blok<SbNavigation> };
+  story: StoryData<Blok<SbNavigation>>;
 };
 
 const Header = ({ story }: HeaderProps) => {

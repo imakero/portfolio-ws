@@ -19,7 +19,10 @@ export default function Home({ story, preview, navigation }: PageProps) {
   story = useStoryblokState(
     story,
     {
-      resolveRelations: ["featured_projects.projects"],
+      resolveRelations: [
+        "featured_projects.projects",
+        "featured_articles.articles",
+      ],
     },
     preview
   );
@@ -48,7 +51,10 @@ export const getStaticProps: GetStaticProps = async ({ preview, params }) => {
   let sbParams = {
     version: "published",
     resolve_links: "url",
-    resolve_relations: ["featured_projects.projects"],
+    resolve_relations: [
+      "featured_projects.projects",
+      "featured_articles.articles",
+    ],
   };
 
   if (preview) {

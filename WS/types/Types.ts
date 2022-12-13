@@ -10,6 +10,11 @@ export type Link = {
 
 export type Blok<BlokType> = SbBlokData & BlokType;
 
+export type SbFeaturedArticles = {
+  title: string;
+  articles: StoryData<Blok<SbArticle>>[];
+};
+
 export type SbArticle = {
   image: SbImage;
   title: string;

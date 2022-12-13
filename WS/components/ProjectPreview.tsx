@@ -7,10 +7,8 @@ type ProjectPreviewProps = {
   tags: string[];
 };
 
-const ProjectPreview = (props: ProjectPreviewProps) => {
-  const { image, title, description } = props.blok;
-
-  const { tags } = props;
+const ProjectPreview = ({ tags, blok }: ProjectPreviewProps) => {
+  const { image, title, description } = blok;
 
   return (
     <article className="flex-col max-w-md p-4 m-16 relative">

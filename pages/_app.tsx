@@ -7,6 +7,7 @@ import Navigation from "../WS/components/Navigation";
 import MenuLink from "../WS/components/MenuLink";
 import FeaturedProjects from "../WS/blocks/FeaturedProjects";
 import Article from "../WS/components/Article";
+import FeaturedArticles from "../WS/blocks/FeaturedArticles";
 
 const components = {
   page: Page,
@@ -15,6 +16,7 @@ const components = {
   menu_link: MenuLink,
   featured_projects: FeaturedProjects,
   article: Article,
+  featured_articles: FeaturedArticles,
 };
 
 storyblokInit({

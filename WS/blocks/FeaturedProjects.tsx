@@ -5,9 +5,7 @@ type FeaturedProjectsProps = {
   blok: Blok<SbFeaturedProjects>;
 };
 
-const FeaturedProjects = (props: FeaturedProjectsProps) => {
-  const { blok } = props;
-
+const FeaturedProjects = ({ blok }: FeaturedProjectsProps) => {
   return (
     <section>
       <h2 className="text-6xl font-bold text-center mb-16">{blok.heading}</h2>
