@@ -1,7 +1,7 @@
 import { Blok, SbArticle } from "../types/Types";
-import { render } from "storyblok-rich-text-react-renderer-ts";
 import Link from "next/link";
 import { storyblokEditable, StoryData } from "@storyblok/react";
+import RichText from "./richtext/RichText";
 
 type ArticlePreviewProps = {
   article: StoryData<Blok<SbArticle>>;
@@ -15,7 +15,9 @@ const ArticlePreview = ({ article }: ArticlePreviewProps) => {
       <Link href={article.full_slug}>
         <img src={image.filename} alt={image.alt} />
         <h2 className="font-bold text-2xl">{title}</h2>
-        <div>{render(preview)}</div>
+        <div>
+          <RichText document={preview} />
+        </div>
       </Link>
     </div>
   );

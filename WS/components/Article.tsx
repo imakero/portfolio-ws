@@ -1,6 +1,7 @@
 import { Blok, SbArticle } from "../types/Types";
 import { render } from "storyblok-rich-text-react-renderer-ts";
 import { storyblokEditable } from "@storyblok/react";
+import RichText from "./richtext/RichText";
 
 type ArticleProps = {
   blok: Blok<SbArticle>;
@@ -19,7 +20,9 @@ const Article = ({ blok }: ArticleProps) => {
         <h1 className="text-5xl font-bold my-4">{title}</h1>
         <h2 className="text-2xl font-regular mb-8">{subtitle}</h2>
       </div>
-      <div className="flex flex-col max-w-lg">{render(content)}</div>
+      <div className="flex flex-col max-w-lg">
+        <RichText document={content} />
+      </div>
     </article>
   );
 };
