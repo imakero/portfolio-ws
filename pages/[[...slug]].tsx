@@ -38,8 +38,12 @@ export default function Home({ story, preview, navigation }: PageProps) {
   );
 }
 
-export const getStaticProps: GetStaticProps = async (context) => {
-  let slug = "home";
+export const getStaticProps: GetStaticProps = async ({ preview, params }) => {
+  let slug = params?.slug
+    ? Array.isArray(params.slug)
+      ? params.slug.join("/")
+      : params.slug
+    : "home";
 
   let sbParams = {
     version: "published",
@@ -47,7 +51,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     resolve_relations: ["featured_projects.projects"],
   };
 
-  if (context.preview) {
+  if (preview) {
     sbParams.version = "draft";
   }
 
@@ -63,7 +67,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
       story: data ? data.story : false,
       key: data ? data.story.id : false,
       navigation: navigation ? navigation.story : false,
-      preview: context.preview || false,
+      preview: preview || false,
     },
     revalidate: 3600,
   };

@@ -1,4 +1,4 @@
-import { SbBlokData, StoryData } from "@storyblok/react";
+import { StoryData } from "@storyblok/react";
 import Header from "../components/Header";
 import { Blok, SbNavigation } from "../types/Types";
 
@@ -10,7 +10,7 @@ type LayoutProps = {
 const Layout = ({ children, story }: LayoutProps) => (
   <div>
     <Header story={story} />
-    {children}
+    <main>{children}</main>
   </div>
 );
 

@@ -10,6 +10,14 @@ export type Link = {
 
 export type Blok<BlokType> = SbBlokData & BlokType;
 
+export type SbArticle = {
+  image: SbImage;
+  title: string;
+  content: Richtext;
+  preview: Richtext;
+  subtitle: string;
+};
+
 export type SbProject = {
   image: SbImage;
   title: string;
