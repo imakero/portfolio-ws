@@ -14,6 +14,9 @@ module.exports = {
         secondary: {
           DEFAULT: "#F9EADC",
         },
+        tertiary: {
+          DEFAULT: "#FFE2C7",
+        },
       },
       fontFamily: {
         sans: "Inter, sans-serif",
