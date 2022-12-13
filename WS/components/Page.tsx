@@ -1,11 +1,8 @@
-import {
-  storyblokEditable,
-  StoryblokComponent,
-  SbBlokData,
-} from "@storyblok/react";
+import { storyblokEditable, StoryblokComponent } from "@storyblok/react";
+import { Blok, SbPage } from "../types/Types";
 
 type PageProps = {
-  blok: SbBlokData & { body: SbBlokData[] };
+  blok: Blok<SbPage>;
 };
 
 const Page = ({ blok }: PageProps) => {

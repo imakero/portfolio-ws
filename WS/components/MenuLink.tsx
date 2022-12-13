@@ -1,9 +1,9 @@
-import { SbBlokData, storyblokEditable } from "@storyblok/react";
+import { storyblokEditable } from "@storyblok/react";
 import NextLink from "next/link";
-import { Link } from "../types/Types";
+import { Blok, SbMenuLink } from "../types/Types";
 
 type MenuLinkProps = {
-  blok: SbBlokData & { link: Link; name: string };
+  blok: Blok<SbMenuLink>;
 };
 
 const MenuLink = ({ blok }: MenuLinkProps) => {

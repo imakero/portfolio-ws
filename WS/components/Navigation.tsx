@@ -1,11 +1,8 @@
-import {
-  storyblokEditable,
-  StoryblokComponent,
-  SbBlokData,
-} from "@storyblok/react";
+import { storyblokEditable, StoryblokComponent } from "@storyblok/react";
+import { Blok, SbNavigation } from "../types/Types";
 
 type NavigationProps = {
-  blok: SbBlokData & { header_menu: SbBlokData[] };
+  blok: Blok<SbNavigation>;
 };
 
 const Navigation = ({ blok }: NavigationProps) => {

@@ -1,9 +1,8 @@
-import { SbBlokData, Story, StoryData } from "@storyblok/react";
 import ProjectPreview from "../components/ProjectPreview";
-import { Project } from "../types/Types";
+import { Blok, SbFeaturedProjects } from "../types/Types";
 
 type FeaturedProjectsProps = {
-  blok: SbBlokData & { projects: StoryData<Project>[]; heading: string };
+  blok: Blok<SbFeaturedProjects>;
 };
 
 const FeaturedProjects = (props: FeaturedProjectsProps) => {

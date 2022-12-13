@@ -1,9 +1,9 @@
-import { Project } from "../types/Types";
+import { Blok, SbProject } from "../types/Types";
 import { render } from "storyblok-rich-text-react-renderer-ts";
 import TagList from "./TagList";
 
 type ProjectPreviewProps = {
-  blok: Project;
+  blok: Blok<SbProject>;
   tags: string[];
 };
 
