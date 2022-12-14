@@ -7,10 +7,10 @@ type HeadingProps = {
 };
 
 const Heading = ({ level, children }: HeadingProps) => {
-  const size = ["4xl", "3xl", "2xl", "xl", "lg", "md"];
+  const size = ["4xl", "2xl", "2xl", "xl", "lg", "md"];
   return React.createElement(
     `h${level}`,
-    { className: `font-bold font-${size[level - 1]} my-4` },
+    { className: `font-bold text-${size[level - 1]} my-4` },
     children
   );
 };
