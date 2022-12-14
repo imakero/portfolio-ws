@@ -8,7 +8,7 @@ type RichTextProps = {
 };
 
 const RichText = ({ document }: RichTextProps) => (
-  <>
+  <div className="mb-6">
     {render(document, {
       markResolvers: {
         bold: (children) => <strong className="font-bold">{children}</strong>,
@@ -29,10 +29,15 @@ const RichText = ({ document }: RichTextProps) => (
             language={language}
           />
         ),
-        paragraph: (children) => <p className="mb-6">{children}</p>,
+        paragraph: (children) => <p className="mb-6 last:mb-0">{children}</p>,
+        blockquote: (children) => (
+          <blockquote className="border-l-2 bg-tertiary px-6 -mx-7 italic py-4 border-l-primary mb-6 drop-shadow-standard">
+            {children}
+          </blockquote>
+        ),
       },
     })}
-  </>
+  </div>
 );
 
 export default RichText;
