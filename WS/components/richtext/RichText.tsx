@@ -2,6 +2,7 @@ import { Richtext } from "@storyblok/react";
 import { render } from "storyblok-rich-text-react-renderer-ts";
 import Heading from "./Heading";
 import CodeBlock from "./CodeBlock";
+import Image from "next/image";
 
 type RichTextProps = {
   document: Richtext;
@@ -29,7 +30,25 @@ const RichText = ({ document }: RichTextProps) => (
             language={language}
           />
         ),
-        paragraph: (children) => <p className="mb-6 last:mb-0">{children}</p>,
+        image: (_children, props) => (
+          <div className="relative block w-full h-96">
+            <Image
+              className="object-cover rounded-md drop-shadow-standard"
+              fill
+              src={props.src}
+              alt={props.alt}
+            />
+          </div>
+        ),
+        paragraph: (children) => {
+          // We must check if the paragraph contains for example images
+          // since these are rendered in div wrappers, and paragraphs can't
+          // have div children.
+          if (Array.isArray(children) && typeof children[0] === "object") {
+            return <>{children}</>;
+          }
+          return <p className="mb-6 last:mb-0">{children}</p>;
+        },
         blockquote: (children) => (
           <blockquote className="border-l-2 bg-tertiary px-6 -mx-7 italic py-4 border-l-primary mb-6 drop-shadow-standard">
             {children}
