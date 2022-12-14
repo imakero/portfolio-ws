@@ -8,6 +8,7 @@ import MenuLink from "../WS/components/MenuLink";
 import FeaturedProjects from "../WS/blocks/FeaturedProjects";
 import Article from "../WS/components/Article";
 import FeaturedArticles from "../WS/blocks/FeaturedArticles";
+import Road from "../WS/blocks/Road";
 
 const components = {
   page: Page,
@@ -17,6 +18,7 @@ const components = {
   featured_projects: FeaturedProjects,
   article: Article,
   featured_articles: FeaturedArticles,
+  road: Road,
 };
 
 storyblokInit({
