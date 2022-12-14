@@ -1,6 +1,7 @@
 import { Richtext } from "@storyblok/react";
 import { render } from "storyblok-rich-text-react-renderer-ts";
 import Heading from "./Heading";
+import CodeBlock from "./CodeBlock";
 
 type RichTextProps = {
   document: Richtext;
@@ -22,6 +23,12 @@ const RichText = ({ document }: RichTextProps) => (
       },
       nodeResolvers: {
         heading: (children, props) => <Heading {...props}>{children}</Heading>,
+        code_block: (children, { class: language }) => (
+          <CodeBlock
+            code={children ? children.toString() : ""}
+            language={language}
+          />
+        ),
         paragraph: (children) => <p className="mb-6">{children}</p>,
       },
     })}
