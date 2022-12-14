@@ -42,6 +42,9 @@ const RichText = ({ document }: RichTextProps) => (
           <ul className="list-disc mb-6">{children}</ul>
         ),
         list_item: (children) => <li className="mb-2">{children}</li>,
+        horizontal_rule: () => (
+          <hr className="mx-auto w-8 border-primary border-b-8 border-t-0 border-l-0 border-r-0 border-dotted mb-6" />
+        ),
       },
     })}
   </div>
