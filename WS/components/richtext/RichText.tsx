@@ -35,6 +35,13 @@ const RichText = ({ document }: RichTextProps) => (
             {children}
           </blockquote>
         ),
+        ordered_list: (children) => (
+          <ol className="list-decimal mb-6">{children}</ol>
+        ),
+        bullet_list: (children) => (
+          <ul className="list-disc mb-6">{children}</ul>
+        ),
+        list_item: (children) => <li className="mb-2">{children}</li>,
       },
     })}
   </div>
