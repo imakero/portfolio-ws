@@ -27,7 +27,6 @@ export type SbBlob = {
 };
 
 export type SbFeaturedArticles = {
-  title: string;
   articles: StoryData<Blok<SbArticle>>[];
 };
 
