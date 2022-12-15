@@ -10,10 +10,12 @@ import Article from "../WS/components/Article";
 import FeaturedArticles from "../WS/blocks/FeaturedArticles";
 import Road from "../WS/blocks/Road";
 import Section from "../WS/blocks/Section";
+import Blob from "../WS/block-components/Blob";
 import Image from "../WS/block-components/Image";
 import Grid from "../WS/block-components/Grid";
 
 const components = {
+  blob: Blob,
   grid: Grid,
   hero: Hero,
   image: Image,

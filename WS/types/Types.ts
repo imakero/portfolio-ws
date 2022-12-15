@@ -21,6 +21,11 @@ export type SbImage = {
   image: SbImageType;
 };
 
+export type SbBlob = {
+  body: SbBlokData[];
+  blob_id: "1" | "2" | "3";
+};
+
 export type SbFeaturedArticles = {
   title: string;
   articles: StoryData<Blok<SbArticle>>[];
