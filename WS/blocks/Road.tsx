@@ -6,10 +6,7 @@ type RoadProps = {
 };
 
 const Road = ({ blok }: RoadProps) => (
-  <div
-    className="realative fill-primary w-full mt-64"
-    {...storyblokEditable(blok)}
-  >
+  <div className="realative fill-primary w-full" {...storyblokEditable(blok)}>
     <svg viewBox="0 0 1512 406" xmlns="http://www.w3.org/2000/svg">
       <path
         fill-rule="evenodd"
