@@ -16,7 +16,7 @@ const ArticlePreview = ({ article }: ArticlePreviewProps) => {
       <Link href={article.full_slug}>
         <div className="w-full h-64 relative">
           <Image
-            className="object-cover rounded-md"
+            className="object-cover rounded-md hover:rotate-1 hover:scale-105"
             fill
             src={image.filename}
             alt={image.alt}
