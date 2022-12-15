@@ -31,7 +31,7 @@ const RichText = ({ document }: RichTextProps) => (
           />
         ),
         image: (_children, props) => (
-          <div className="relative block w-full h-96">
+          <div className="relative block w-full h-96 mb-6">
             <Image
               className="object-cover rounded-md drop-shadow-standard"
               fill
