@@ -17,14 +17,18 @@ import RichText from "../WS/block-components/RichText";
 
 const components = {
   blob: Blob,
+  featured_articles: FeaturedArticles,
+  featured_projects: FeaturedProjects,
   grid: Grid,
   hero: Hero,
   image: Image,
   menu_link: MenuLink,
-  featured_projects: FeaturedProjects,
+  navigation: Navigation,
   article: Article,
+  page: Page,
   richtext: RichText,
   road: Road,
+  section: Section,
 };
 
 storyblokInit({
