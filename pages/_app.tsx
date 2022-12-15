@@ -9,6 +9,7 @@ import FeaturedProjects from "../WS/blocks/FeaturedProjects";
 import Article from "../WS/components/Article";
 import FeaturedArticles from "../WS/blocks/FeaturedArticles";
 import Road from "../WS/blocks/Road";
+import Section from "../WS/blocks/Section";
 
 const components = {
   page: Page,
