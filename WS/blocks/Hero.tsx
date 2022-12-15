@@ -8,7 +8,7 @@ type HeroProps = {
 const Hero = ({ blok }: HeroProps) => {
   return (
     <div
-      className="realative h-screen w-full bg-primary fill-secondary"
+      className="h-screen w-screen relative top-0 left-0 bg-primary fill-secondary"
       {...storyblokEditable(blok)}
     >
       <svg
