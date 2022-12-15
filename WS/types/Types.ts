@@ -14,13 +14,20 @@ export type SbSection = {
   title: string;
   body: SbBlokData[];
 };
+
+export type SbImage = {
+  x: number;
+  y: number;
+  image: SbImageType;
+};
+
 export type SbFeaturedArticles = {
   title: string;
   articles: StoryData<Blok<SbArticle>>[];
 };
 
 export type SbArticle = {
-  image: SbImage;
+  image: SbImageType;
   title: string;
   content: Richtext;
   preview: Richtext;
@@ -28,7 +35,7 @@ export type SbArticle = {
 };
 
 export type SbProject = {
-  image: SbImage;
+  image: SbImageType;
   title: string;
   description: Richtext;
   tag_list: string[];
@@ -52,7 +59,7 @@ export type SbPage = {
   body: SbBlokData[];
 };
 
-export type SbImage = {
+export type SbImageType = {
   id: number;
   alt: string;
   name: string;

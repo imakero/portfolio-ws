@@ -10,11 +10,13 @@ import Article from "../WS/components/Article";
 import FeaturedArticles from "../WS/blocks/FeaturedArticles";
 import Road from "../WS/blocks/Road";
 import Section from "../WS/blocks/Section";
+import Image from "../WS/block-components/Image";
 
 const components = {
   page: Page,
   navigation: Navigation,
   hero: Hero,
+  image: Image,
   menu_link: MenuLink,
   featured_projects: FeaturedProjects,
   article: Article,
