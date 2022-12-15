@@ -11,10 +11,10 @@ import FeaturedArticles from "../WS/blocks/FeaturedArticles";
 import Road from "../WS/blocks/Road";
 import Section from "../WS/blocks/Section";
 import Image from "../WS/block-components/Image";
+import Grid from "../WS/block-components/Grid";
 
 const components = {
-  page: Page,
-  navigation: Navigation,
+  grid: Grid,
   hero: Hero,
   image: Image,
   menu_link: MenuLink,

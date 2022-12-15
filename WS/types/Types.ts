@@ -59,6 +59,10 @@ export type SbPage = {
   body: SbBlokData[];
 };
 
+export type SbGrid = {
+  items: SbBlokData[];
+};
+
 export type SbImageType = {
   id: number;
   alt: string;
