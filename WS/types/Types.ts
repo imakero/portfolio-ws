@@ -68,6 +68,10 @@ export type SbGrid = {
   items: SbBlokData[];
 };
 
+export type SbRichText = {
+  content: Richtext;
+};
+
 export type SbImageType = {
   id: number;
   alt: string;

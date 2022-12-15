@@ -13,6 +13,7 @@ import Section from "../WS/blocks/Section";
 import Blob from "../WS/block-components/Blob";
 import Image from "../WS/block-components/Image";
 import Grid from "../WS/block-components/Grid";
+import RichText from "../WS/block-components/RichText";
 
 const components = {
   blob: Blob,
@@ -22,7 +23,7 @@ const components = {
   menu_link: MenuLink,
   featured_projects: FeaturedProjects,
   article: Article,
-  featured_articles: FeaturedArticles,
+  richtext: RichText,
   road: Road,
 };
 
