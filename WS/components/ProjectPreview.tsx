@@ -12,28 +12,30 @@ const ProjectPreview = ({ tags, blok }: ProjectPreviewProps) => {
   const { image, title, description } = blok;
 
   return (
-    <article className="flex-col max-w-md p-4 m-16 relative fill-tertiary">
-      <svg
-        className="absolute top-1/4 -left-1/4 w-full h-full scale-x-150 scale-y-100 -z-10 overflow-visible"
-        width="831"
-        height="811"
-        viewBox="0 0 831 811"
-        preserveAspectRatio="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path d="M65.0417 666.909C145.872 826.161 282.597 735.283 423.078 771.999C483.824 787.875 517.117 814.692 578.918 810.576C694.581 802.872 777.949 753.3 840.294 621.68C945.399 399.788 858.986 5.29715 645.988 0.453013C432.99 -4.39112 320.894 28.261 137.044 164.074C-46.8068 299.887 -18.7233 501.875 65.0417 666.909Z" />
-      </svg>
-      <div className="relative w-full h-64 -rotate-1 mb-4">
-        <Image
-          className="object-cover drop-shadow-standard"
-          fill
-          src={image.filename}
-          alt={image.alt}
-        />
+    <article className="flex-col max-w-md p-4 m-16 fill-tertiary">
+      <div className="relative">
+        <div className="absolute top-32 left-0 scale-x-150 w-full h-full -z-10 overflow-visible">
+          <svg
+            viewBox="0 0 857 898"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-full w-full"
+          >
+            <path d="M541.5 60.3998C317.167 -5.23731 152.196 -62.9164 60.5323 146.266C7.42864 396.408 -70.529 644.739 129.032 815.766C317.475 977.264 671.392 858.207 764.532 815.766C925.371 742.477 834.073 363.121 803 193.4C770.62 16.5391 718.786 112.272 541.5 60.3998Z" />
+          </svg>
+        </div>
+        <div className="relative w-full h-64 hover:-rotate-1 hover:scale-105 mb-4 ">
+          <Image
+            className="object-cover drop-shadow-standard rounded-md border-primary border"
+            fill
+            src={image.filename}
+            alt={image.alt}
+          />
+        </div>
+        <TagList tags={tags} />
+        <h2 className="text-4xl font-bold">{title}</h2>
+        <RichText document={description} />
       </div>
-      <TagList tags={tags} />
-      <h2 className="text-4xl font-bold">{title}</h2>
-      <RichText document={description} />
     </article>
   );
 };
