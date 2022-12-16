@@ -12,7 +12,7 @@ const Article = ({ blok }: ArticleProps) => {
 
   return (
     <article
-      className="flex flex-col justify-center align-middle w-full items-center pt-32"
+      className="flex flex-col justify-center align-middle w-full items-center pt-14"
       {...storyblokEditable(blok)}
     >
       <div className="flex flex-col w-full justify-center items-center">
@@ -24,10 +24,12 @@ const Article = ({ blok }: ArticleProps) => {
             alt={image.alt}
           />
         </div>
-        <h1 className="text-5xl font-bold my-4">{title}</h1>
-        <h2 className="text-2xl font-regular mb-8">{subtitle}</h2>
+        <h1 className="text-5xl font-bold text-center my-4 px-6">{title}</h1>
+        <h2 className="text-2xl font-regular text-center mb-8 px-6">
+          {subtitle}
+        </h2>
       </div>
-      <div className="flex flex-col max-w-xl">
+      <div className="flex flex-col w-full max-w-xl px-6">
         <RichText document={content} />
       </div>
     </article>
