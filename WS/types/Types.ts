@@ -10,6 +10,13 @@ export type Link = {
 
 export type Blok<BlokType = {}> = SbBlokData & BlokType;
 
+export type SbFormInput = {
+  type: "text" | "textarea" | "email";
+  label: string;
+  name: string;
+  placeholder: string;
+};
+
 export type SbSection = {
   title: string;
   body: SbBlokData[];
