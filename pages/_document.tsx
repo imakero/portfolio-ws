@@ -4,6 +4,11 @@ export default function Document() {
   return (
     <Html>
       <Head>
+        <meta
+          name="description"
+          content="Imakero, full-stack developer."
+          key="desc"
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
