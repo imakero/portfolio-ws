@@ -89,6 +89,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
       return;
     }
     const splittedSlug = slug === "home" ? false : slug.split("/");
+    if (splittedSlug[0] === "projects") {
+      return;
+    }
     paths.push({ params: { slug: splittedSlug } });
   });
 
