@@ -14,12 +14,14 @@ import Blob from "../WS/block-components/Blob";
 import Image from "../WS/block-components/Image";
 import Grid from "../WS/block-components/Grid";
 import RichText from "../WS/block-components/RichText";
+import Form from "../WS/block-components/Form";
 import FormInput from "../WS/block-components/FormInput";
 
 const components = {
   blob: Blob,
   featured_articles: FeaturedArticles,
   featured_projects: FeaturedProjects,
+  form: Form,
   form_input: FormInput,
   grid: Grid,
   hero: Hero,
