@@ -6,7 +6,9 @@ type RichTextProps = {
 };
 
 const RichText = ({ blok: { content } }: RichTextProps) => (
-  <RenderRichText document={content} />
+  <div className="p-4 sm:p-8">
+    <RenderRichText document={content} />
+  </div>
 );
 
 export default RichText;

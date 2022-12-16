@@ -6,7 +6,7 @@ type TagListProps = {
 
 const TagList = ({ tags }: TagListProps) => {
   return (
-    <div className="flex flex-wrap space-x-4">
+    <div className="flex flex-wrap space-x-2 justify-start align-middle">
       {tags.map((tag) => (
         <Tag tag={tag} key={tag} />
       ))}

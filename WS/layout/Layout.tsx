@@ -10,7 +10,7 @@ type LayoutProps = {
 const Layout = ({ children, story }: LayoutProps) => (
   <div>
     <Header story={story} />
-    <main>{children}</main>
+    <main className="overflow-hidden">{children}</main>
   </div>
 );
 

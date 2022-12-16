@@ -13,7 +13,7 @@ const Form = ({ blok }: FormProps) => {
   );
 
   return (
-    <div className="p-4 sm:w-96" {...storyblokEditable(blok)}>
+    <div className="p-4 w-80" {...storyblokEditable(blok)}>
       <Formik
         initialValues={initialValues}
         onSubmit={(values) => console.log(values)}
@@ -27,7 +27,6 @@ const Form = ({ blok }: FormProps) => {
             </div>
             <button
               type="submit"
-              onClick={() => console.log("asdf")}
               className="bg-primary font-bold text-white rounded-full px-4 py-2 hover:scale-[102%] focus:outline-none focus:border-2 focus:border-primary-light"
             >
               {blok.submit_text}

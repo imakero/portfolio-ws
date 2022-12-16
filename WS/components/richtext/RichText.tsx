@@ -9,7 +9,7 @@ type RichTextProps = {
 };
 
 const RichText = ({ document }: RichTextProps) => (
-  <div className="mb-6">
+  <>
     {render(document, {
       markResolvers: {
         bold: (children) => <strong className="font-bold">{children}</strong>,
@@ -66,7 +66,7 @@ const RichText = ({ document }: RichTextProps) => (
         ),
       },
     })}
-  </div>
+  </>
 );
 
 export default RichText;

@@ -10,7 +10,7 @@ const Heading = ({ level, children }: HeadingProps) => {
   const size = ["4xl", "2xl", "2xl", "xl", "lg", "md"];
   return React.createElement(
     `h${level}`,
-    { className: `font-bold text-${size[level - 1]} my-4` },
+    { className: `font-bold text-${size[level - 1]} mb-4` },
     children
   );
 };

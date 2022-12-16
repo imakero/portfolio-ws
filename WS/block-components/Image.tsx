@@ -13,7 +13,7 @@ const Image = ({ blok }: ImageProps) => {
       width={x}
       height={y}
       alt={image.alt}
-      className="rounded-full"
+      className="rounded-full p-4"
     />
   );
 };
