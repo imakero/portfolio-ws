@@ -10,6 +10,10 @@ export type Link = {
 
 export type Blok<BlokType = {}> = SbBlokData & BlokType;
 
+export type SbContactForm = {
+  form: Blok<SbForm>[];
+};
+
 export type SbForm = {
   fields: Blok<SbFormInput>[];
   submit_text: string;

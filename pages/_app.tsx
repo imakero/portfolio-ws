@@ -16,9 +16,11 @@ import Grid from "../WS/block-components/Grid";
 import RichText from "../WS/block-components/RichText";
 import Form from "../WS/block-components/Form";
 import FormInput from "../WS/block-components/FormInput";
+import ContactForm from "../WS/block-components/ContactForm";
 
 const components = {
   blob: Blob,
+  contact_form: ContactForm,
   featured_articles: FeaturedArticles,
   featured_projects: FeaturedProjects,
   form: Form,
