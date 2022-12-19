@@ -11,12 +11,21 @@ type HeaderProps = {
 const Header = ({ story }: HeaderProps) => {
   return (
     <header className="flex justify-between items-center p-4 absolute w-full text-xl bg-primary z-10">
-      <Link href="http://www.github.com/imakero" target="_blank" legacyBehavior>
-        <a className="flex items-center font-extralight text-white fill-white space-x-2 hover:text-secondary hover:fill-secondary">
+      <div className="flex items-center space-x-2">
+        <a
+          href="http://www.github.com/imakero"
+          target="_blank"
+          rel="noreferrer"
+          className="font-extralight text-white fill-white  hover:text-secondary hover:fill-secondary"
+        >
           <GitHubIcon />
-          <span>Imakero</span>
         </a>
-      </Link>
+        <Link href="/" legacyBehavior>
+          <a className="font-extralight text-white fill-white hover:text-secondary hover:fill-secondary">
+            Imakero
+          </a>
+        </Link>
+      </div>
       <Navigation blok={story.content} />
     </header>
   );
