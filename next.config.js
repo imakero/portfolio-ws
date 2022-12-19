@@ -5,6 +5,11 @@ const nextConfig = {
   env: {
     storyblokApiToken: process.env.STORYBLOK_API_TOKEN,
   },
+  i18n: {
+    localeDetection: false,
+    locales: ["en"],
+    defaultLocale: "en",
+  },
   images: {
     domains: ["a.storyblok.com"],
   },
