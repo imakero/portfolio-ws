@@ -8,13 +8,11 @@ type FeaturedProjectsProps = {
 
 const FeaturedProjects = ({ blok }: FeaturedProjectsProps) => {
   return (
-    <div
-      className="grid grid-cols-1 xl:grid-cols-2 justify-items-center xl:[&>*:nth-child(even)]:translate-y-1/2 w-full"
-      {...storyblokEditable(blok)}
-    >
+    <div className="w-full columns-sm gap-8 px-4" {...storyblokEditable(blok)}>
       {blok.projects.map((project) => (
         <ProjectPreview
           blok={project.content}
+          slug={project.slug}
           tags={project.tag_list}
           key={project.uuid as string}
         />
