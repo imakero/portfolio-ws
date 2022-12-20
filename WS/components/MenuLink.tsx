@@ -13,7 +13,7 @@ const MenuLink = ({ blok }: MenuLinkProps) => {
       legacyBehavior
       {...storyblokEditable(blok)}
     >
-      <a className="text-xl font-light uppercase tracking-widest text-white hover:text-secondary">
+      <a className="text-xl font-light uppercase tracking-wide text-white hover:text-secondary hover:underline hover:underline-offset-8">
         {blok.name}
       </a>
     </NextLink>
