@@ -11,9 +11,9 @@ const Navigation = ({ blok }: NavigationProps) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div {...storyblokEditable(blok)}>
+    <nav {...storyblokEditable(blok)}>
       <div
-        className={`md:flex md:flex-row md:space-x-2 md:w-fit md:h-fit md:relative md:translate-y-0 bg-primary opacity-90 h-screen w-screen flex flex-col justify-center items-center fixed top-0 left-0${
+        className={`fixed top-0 flex h-screen w-screen flex-col items-center justify-center bg-primary opacity-90 md:relative md:flex md:h-fit md:w-fit md:translate-y-0 md:flex-row md:space-x-4 left-0${
           menuOpen
             ? " translate-y-0 transition-all duration-500"
             : " -translate-y-full transition-all duration-500"
@@ -26,13 +26,13 @@ const Navigation = ({ blok }: NavigationProps) => {
       </div>
       {!menuOpen && (
         <button
-          className="block md:hidden fill-white z-10"
+          className="z-10 block fill-white md:hidden"
           onClick={() => setMenuOpen((previous) => !previous)}
         >
           <MenuIcon />
         </button>
       )}
-    </div>
+    </nav>
   );
 };
 
