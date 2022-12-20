@@ -19,6 +19,8 @@ export type SbForm = {
   submit_text: string;
 };
 
+export type SbGalleryType = SbImageType[];
+
 export type SbFormInput = {
   type: "text" | "textarea" | "email";
   label: string;
@@ -58,7 +60,7 @@ export type SbProject = {
   image: SbImageType;
   title: string;
   description: Richtext;
-  tag_list: string[];
+  gallery: SbGalleryType;
 };
 
 export type SbFeaturedProjects = {

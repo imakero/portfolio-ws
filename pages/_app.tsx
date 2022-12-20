@@ -17,6 +17,7 @@ import RichText from "../WS/block-components/RichText";
 import Form from "../WS/block-components/Form";
 import FormInput from "../WS/block-components/FormInput";
 import ContactForm from "../WS/block-components/ContactForm";
+import Project from "../WS/components/Project";
 
 const components = {
   blob: Blob,
@@ -32,6 +33,7 @@ const components = {
   navigation: Navigation,
   article: Article,
   page: Page,
+  project: Project,
   richtext: RichText,
   road: Road,
   section: Section,
