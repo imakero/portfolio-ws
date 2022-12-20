@@ -19,7 +19,7 @@ const Project = ({ blok }: ProjectProps) => {
       className="container mx-auto mt-32 flex justify-center"
       {...storyblokEditable(blok)}
     >
-      <Blob id={2}>
+      <Blob id={2} className="max-w-lg">
         <div className="p-4">
           <div
             className={`relative mb-8 w-full`}

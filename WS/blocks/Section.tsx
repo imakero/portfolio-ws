@@ -10,7 +10,7 @@ const Section = ({ blok }: SectionProps) => {
   return (
     <section
       id={blok.title.toLowerCase()}
-      className="container mx-auto py-32"
+      className="container mx-auto py-16"
       {...storyblokEditable(blok)}
     >
       <RockHeading className="mb-32">{blok.title}</RockHeading>

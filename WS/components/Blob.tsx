@@ -2,12 +2,13 @@ import BlobBackdrop from "./BlobBackdrop";
 
 type BlobProps = {
   children: React.ReactNode;
+  className?: string;
   id: 1 | 2 | 3;
 };
 
-const Blob = ({ children, id }: BlobProps) => {
+const Blob = ({ children, id, className = "" }: BlobProps) => {
   return (
-    <div className="relative max-w-xl lg:max-w-sm">
+    <div className={`relative ${className}`}>
       {children}
       <BlobBackdrop id={id} />
     </div>
