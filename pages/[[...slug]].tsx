@@ -30,12 +30,12 @@ export default function Home({ story, preview, navigation }: PageProps) {
   return (
     <>
       <Head>
-        <title>Create Next App</title>
+        <title>Portfolio</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <Layout story={navigation}>
-        <StoryblokComponent blok={story.content} />
+        <StoryblokComponent blok={story.content} tags={story.tag_list} />
       </Layout>
     </>
   );
@@ -84,14 +84,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const { data } = await storyblokApi.get("cdn/links/");
 
   const paths: any = [];
-  Object.values(data.links).forEach(({ slug, isFolder }: any) => {
-    if (isFolder) {
+  Object.values(data.links).forEach(({ slug, is_folder }: any) => {
+    if (is_folder || slug === "navigation") {
       return;
     }
     const splittedSlug = slug === "home" ? false : slug.split("/");
-    if (splittedSlug[0] === "projects") {
-      return;
-    }
+
     paths.push({ params: { slug: splittedSlug } });
   });
 
