@@ -1,40 +1,46 @@
 import { Blok, SbProject } from "../types/Types";
-import TagList from "./TagList";
-import RichText from "./richtext/RichText";
 import Image from "next/image";
+import { storyblokEditable } from "@storyblok/react";
+import { imageDimensions } from "../utils/imageDimensions";
+import Link from "next/link";
+import TagList from "./TagList";
 
 type ProjectPreviewProps = {
   blok: Blok<SbProject>;
   tags: string[];
+  slug: string;
 };
 
-const ProjectPreview = ({ tags, blok }: ProjectPreviewProps) => {
-  const { image, title, description } = blok;
+const ProjectPreview = ({ tags, blok, slug }: ProjectPreviewProps) => {
+  const { image, title } = blok;
+  const { width, height } = imageDimensions(image);
 
   return (
-    <article className="flex-col max-w-md p-4 m-16 fill-tertiary">
+    <article
+      className="relative mb-8 fill-tertiary"
+      {...storyblokEditable(blok)}
+    >
       <div className="relative">
-        <div className="absolute top-32 left-0 scale-x-150 w-full h-full -z-10 overflow-visible">
-          <svg
-            viewBox="0 0 857 898"
-            preserveAspectRatio="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-full w-full"
-          >
-            <path d="M541.5 60.3998C317.167 -5.23731 152.196 -62.9164 60.5323 146.266C7.42864 396.408 -70.529 644.739 129.032 815.766C317.475 977.264 671.392 858.207 764.532 815.766C925.371 742.477 834.073 363.121 803 193.4C770.62 16.5391 718.786 112.272 541.5 60.3998Z" />
-          </svg>
-        </div>
-        <div className="relative w-full h-64 hover:-rotate-1 hover:scale-105 mb-4 ">
+        <div
+          className={`relative w-full`}
+          style={{ aspectRatio: `${width} / ${height}` }}
+        >
           <Image
-            className="object-cover drop-shadow-standard rounded-md border-primary border"
+            className="rounded-md object-cover drop-shadow-standard"
             fill
             src={image.filename}
             alt={image.alt}
           />
         </div>
-        <TagList tags={tags} />
-        <h2 className="text-4xl font-bold">{title}</h2>
-        <RichText document={description} />
+        <div className="absolute top-0 left-0 flex h-full w-full flex-col items-center justify-center space-y-2 overflow-hidden rounded-md bg-primary text-white opacity-0 transition-opacity duration-300 hover:opacity-95">
+          <h2 className="text-4xl font-bold">{title}</h2>
+          <TagList tags={tags} />
+          <Link href={`/projects/${slug}`} legacyBehavior>
+            <a className="text-white hover:text-secondary">
+              Learn more &gt;&gt;
+            </a>
+          </Link>
+        </div>
       </div>
     </article>
   );
