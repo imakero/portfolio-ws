@@ -1,4 +1,4 @@
-import Tag from "./Tag";
+import TagIcon from "./TagIcon";
 
 type TagListProps = {
   tags: string[];
@@ -6,9 +6,9 @@ type TagListProps = {
 
 const TagList = ({ tags }: TagListProps) => {
   return (
-    <div className="flex flex-wrap space-x-2 justify-start align-middle">
+    <div className="flex flex-wrap justify-start space-x-2 align-middle">
       {tags.map((tag) => (
-        <Tag tag={tag} key={tag} />
+        <TagIcon tag={tag} key={tag} />
       ))}
     </div>
   );
