@@ -8,6 +8,7 @@ import {
   SiMongodb,
   SiTailwindcss,
   SiStoryblok,
+  SiFastapi,
 } from "react-icons/si";
 import { TbBrandNextjs } from "react-icons/tb";
 
@@ -15,6 +16,8 @@ export const tagToIcon = (tag: string) => {
   switch (tag) {
     case "Docker":
       return <FaDocker />;
+    case "FastAPI":
+      return <SiFastapi />;
     case "Firebase":
       return <SiFirebase />;
     case "Github Actions":
