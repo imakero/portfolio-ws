@@ -3,6 +3,7 @@ import { render } from "storyblok-rich-text-react-renderer-ts";
 import Heading from "./Heading";
 import CodeBlock from "./CodeBlock";
 import Image from "next/image";
+import Link from "./Link";
 
 type RichTextProps = {
   document: Richtext;
@@ -17,9 +18,14 @@ const RichText = ({ document }: RichTextProps) => (
         strike: (children) => <span className="line-through">{children}</span>,
         underline: (children) => <span className="underline">{children}</span>,
         code: (children) => (
-          <code className="border border-primary bg-tertiary rounded-md p-1">
+          <code className="rounded-md border border-primary bg-tertiary p-1">
             {children}
           </code>
+        ),
+        link: (children, { href, target, linktype }) => (
+          <Link href={href} target={target} linktype={linktype}>
+            {children}
+          </Link>
         ),
       },
       nodeResolvers: {
@@ -31,9 +37,9 @@ const RichText = ({ document }: RichTextProps) => (
           />
         ),
         image: (_children, props) => (
-          <div className="relative block w-full h-96 mb-6">
+          <div className="relative mb-6 block h-96 w-full">
             <Image
-              className="object-cover rounded-md drop-shadow-standard"
+              className="rounded-md object-cover drop-shadow-standard"
               fill
               src={props.src}
               alt={props.alt}
@@ -50,19 +56,19 @@ const RichText = ({ document }: RichTextProps) => (
           return <p className="mb-6 last:mb-0">{children}</p>;
         },
         blockquote: (children) => (
-          <blockquote className="border-l-2 bg-tertiary px-6 -mx-7 italic py-4 border-l-primary mb-6 drop-shadow-standard">
+          <blockquote className="-mx-7 mb-6 border-l-2 border-l-primary bg-tertiary px-6 py-4 italic drop-shadow-standard">
             {children}
           </blockquote>
         ),
         ordered_list: (children) => (
-          <ol className="list-decimal mb-6">{children}</ol>
+          <ol className="mb-6 ml-8 list-decimal">{children}</ol>
         ),
         bullet_list: (children) => (
-          <ul className="list-disc mb-6">{children}</ul>
+          <ul className="mb-6 ml-8 list-disc">{children}</ul>
         ),
         list_item: (children) => <li className="mb-2">{children}</li>,
         horizontal_rule: () => (
-          <hr className="mx-auto w-8 border-primary border-b-8 border-t-0 border-l-0 border-r-0 border-dotted mb-6" />
+          <hr className="mx-auto mb-6 w-8 border-b-8 border-t-0 border-l-0 border-r-0 border-dotted border-primary" />
         ),
       },
     })}
