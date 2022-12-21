@@ -2,8 +2,8 @@ import { Richtext } from "@storyblok/react";
 import { render } from "storyblok-rich-text-react-renderer-ts";
 import Heading from "./Heading";
 import CodeBlock from "./CodeBlock";
-import Image from "next/image";
 import Link from "./Link";
+import ZoomableImage from "../ZoomableImage";
 
 type RichTextProps = {
   document: Richtext;
@@ -36,15 +36,8 @@ const RichText = ({ document }: RichTextProps) => (
             language={language}
           />
         ),
-        image: (_children, props) => (
-          <div className="relative mb-6 block h-96 w-full">
-            <Image
-              className="rounded-md object-cover drop-shadow-standard"
-              fill
-              src={props.src}
-              alt={props.alt}
-            />
-          </div>
+        image: (_children, { src, alt }) => (
+          <ZoomableImage src={src} alt={alt} />
         ),
         paragraph: (children) => {
           // We must check if the paragraph contains for example images
