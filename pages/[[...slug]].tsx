@@ -8,6 +8,7 @@ import {
 import Head from "next/head";
 import { GetStaticPaths, GetStaticProps } from "next";
 import Layout from "../WS/layout/Layout";
+import { generateSitemap } from "../WS/utils/sitemap";
 
 type PageProps = {
   story: StoryData;
@@ -92,6 +93,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
     paths.push({ params: { slug: splittedSlug } });
   });
+
+  generateSitemap(paths);
 
   return {
     paths,
