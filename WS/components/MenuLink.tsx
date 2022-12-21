@@ -10,6 +10,7 @@ const MenuLink = ({ blok }: MenuLinkProps) => {
   return (
     <NextLink
       href={blok.link.cached_url}
+      scroll={false}
       legacyBehavior
       {...storyblokEditable(blok)}
     >
