@@ -6,7 +6,7 @@ export default function Document() {
       <Head>
         <meta
           name="description"
-          content="Imakero, full-stack developer."
+          content="Åke, Imakero, is an aspiring full-stack web developer. This is his blog and portfolio website."
           key="desc"
         />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
