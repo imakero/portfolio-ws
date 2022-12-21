@@ -1,9 +1,9 @@
 import { storyblokEditable } from "@storyblok/react";
-import Image from "next/image";
 import { Blok, SbProject } from "../types/Types";
 import { imageDimensions } from "../utils/image";
 import Blob from "../components/Blob";
 import RichText from "../components/richtext/RichText";
+import ZoomableImage from "../components/ZoomableImage";
 
 type ProjectProps = {
   blok: Blok<SbProject>;
@@ -25,12 +25,7 @@ const Project = ({ blok }: ProjectProps) => {
             className={`relative mb-8 w-full`}
             style={{ aspectRatio: `${width} / ${height}` }}
           >
-            <Image
-              className="rounded-md object-contain drop-shadow-standard"
-              fill
-              src={gallery[0].filename}
-              alt={gallery[0].alt}
-            />
+            <ZoomableImage src={gallery[0].filename} alt={gallery[0].alt} />
           </div>
 
           <RichText document={description} />
