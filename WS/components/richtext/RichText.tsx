@@ -40,11 +40,31 @@ const RichText = ({ document }: RichTextProps) => (
           <ZoomableImage src={src} alt={alt} />
         ),
         paragraph: (children) => {
-          // We must check if the paragraph contains for example images
-          // since these are rendered in div wrappers, and paragraphs can't
+          // We must check if the paragraph contains images since
+          // these are rendered in div wrappers, and paragraphs can't
           // have div children.
-          if (Array.isArray(children) && typeof children[0] === "object") {
-            return <>{children}</>;
+          if (Array.isArray(children)) {
+            const modifiedChildren = [];
+            const current: React.ReactNode[] = [];
+            for (let child of children) {
+              if (child.type === ZoomableImage) {
+                if (current.length) {
+                  modifiedChildren.push(
+                    <p className="mb-6 last:mb-0">{current}</p>
+                  );
+                }
+                modifiedChildren.push(child);
+              } else {
+                current.push(child);
+              }
+            }
+            if (current.length) {
+              modifiedChildren.push(
+                <p className="mb-6 last:mb-0">{current}</p>
+              );
+            }
+
+            return <>{modifiedChildren}</>;
           }
           return <p className="mb-6 last:mb-0">{children}</p>;
         },
