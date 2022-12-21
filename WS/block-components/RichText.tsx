@@ -1,13 +1,14 @@
 import { Blok, SbRichText } from "../types/Types";
 import { default as RenderRichText } from "../components/richtext/RichText";
+import { storyblokEditable } from "@storyblok/react";
 
 type RichTextProps = {
   blok: Blok<SbRichText>;
 };
 
-const RichText = ({ blok: { content } }: RichTextProps) => (
-  <div className="p-4 sm:p-8">
-    <RenderRichText document={content} />
+const RichText = ({ blok }: RichTextProps) => (
+  <div className="p-4 sm:p-8" {...storyblokEditable(blok)}>
+    <RenderRichText document={blok.content} />
   </div>
 );
 
