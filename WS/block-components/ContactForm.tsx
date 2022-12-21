@@ -8,15 +8,45 @@ type ContactFormProps = {
   blok: Blok<SbContactForm>;
 };
 
+type Values = { [index: string]: string };
+
+export type ContactFormErrors = {
+  from_name?: string;
+  reply_to?: string;
+  message?: string;
+};
+
+const validate = (values: Values) => {
+  const errors: ContactFormErrors = {};
+
+  if (!values.from_name) {
+    errors.from_name = "Required";
+  }
+
+  if (!values.reply_to) {
+    errors.reply_to = "Required";
+  } else if (
+    !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.reply_to)
+  ) {
+    errors.reply_to = "Invalid email address";
+  }
+
+  if (!values.message) {
+    errors.message = "Required";
+  }
+
+  return errors;
+};
+
 const ContactForm = ({ blok }: ContactFormProps) => {
-  const initialValues = blok.form[0].fields.reduce<{ [index: string]: string }>(
+  const initialValues = blok.form[0].fields.reduce<Values>(
     (values, nestedBlok) => ({ ...values, [nestedBlok.name]: "" }),
     {}
   );
 
   const onSubmit = async (
-    values: { [index: string]: string },
-    { resetForm, setStatus }: FormikHelpers<{ [index: string]: string }>
+    values: Values,
+    { resetForm, setStatus }: FormikHelpers<Values>
   ) => {
     try {
       setStatus({ status: "submitting" });
@@ -40,11 +70,15 @@ const ContactForm = ({ blok }: ContactFormProps) => {
   };
 
   return (
-    <div {...storyblokEditable(blok)}>
+    <div
+      className="flex min-h-[500px] flex-col justify-center"
+      {...storyblokEditable(blok)}
+    >
       <Form
         blok={blok.form[0]}
         initialValues={initialValues}
         onSubmit={onSubmit}
+        validate={validate}
       />
     </div>
   );
