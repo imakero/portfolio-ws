@@ -1,8 +1,8 @@
 import { SbBlokData, StoryData } from "@storyblok/react";
 import Link from "next/link";
 import { Blok, SbNavigation } from "../types/Types";
-import GitHubIcon from "./icons/GitHubIcon";
-import Navigation from "./Navigation";
+import GitHubIcon from "../components/icons/GitHubIcon";
+import Navigation from "../block-components/Navigation";
 
 type HeaderProps = {
   story: StoryData<Blok<SbNavigation>>;
@@ -10,18 +10,18 @@ type HeaderProps = {
 
 const Header = ({ story }: HeaderProps) => {
   return (
-    <header className="flex justify-between items-center p-4 absolute w-full text-xl bg-primary z-10">
+    <header className="absolute z-10 flex w-full items-center justify-between bg-primary p-4 text-xl">
       <div className="flex items-center space-x-2">
         <a
           href="http://www.github.com/imakero"
           target="_blank"
           rel="noreferrer"
-          className="font-extralight text-white fill-white  hover:text-secondary hover:fill-secondary"
+          className="fill-white font-extralight text-white  hover:fill-secondary hover:text-secondary"
         >
           <GitHubIcon />
         </a>
         <Link href="/" legacyBehavior>
-          <a className="font-extralight text-white fill-white hover:text-secondary hover:fill-secondary">
+          <a className="fill-white font-extralight text-white hover:fill-secondary hover:text-secondary">
             Imakero
           </a>
         </Link>

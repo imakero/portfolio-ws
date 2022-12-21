@@ -1,7 +1,7 @@
 import { Blok, SbArticle } from "../types/Types";
 import Link from "next/link";
 import { storyblokEditable, StoryData } from "@storyblok/react";
-import RichText from "./richtext/RichText";
+import RichText from "../components/richtext/RichText";
 import Image from "next/image";
 
 type ArticlePreviewProps = {
@@ -14,15 +14,15 @@ const ArticlePreview = ({ article }: ArticlePreviewProps) => {
   return (
     <div className="max-w-sm" {...storyblokEditable(article.content)}>
       <Link href={article.full_slug}>
-        <div className="w-full h-64 relative">
+        <div className="relative h-64 w-full">
           <Image
-            className="object-cover rounded-md hover:rotate-1 hover:scale-105"
+            className="rounded-md object-cover hover:rotate-1 hover:scale-105"
             fill
             src={image.filename}
             alt={image.alt}
           />
         </div>
-        <h2 className="font-bold text-2xl">{title}</h2>
+        <h2 className="text-2xl font-bold">{title}</h2>
         <div>
           <RichText document={preview} />
         </div>

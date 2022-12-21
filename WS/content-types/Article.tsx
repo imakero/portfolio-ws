@@ -1,6 +1,6 @@
 import { Blok, SbArticle } from "../types/Types";
 import { storyblokEditable } from "@storyblok/react";
-import RichText from "./richtext/RichText";
+import RichText from "../components/richtext/RichText";
 import Image from "next/image";
 
 type ArticleProps = {
@@ -12,11 +12,11 @@ const Article = ({ blok }: ArticleProps) => {
 
   return (
     <article
-      className="flex flex-col justify-center align-middle w-full items-center pt-14"
+      className="flex w-full flex-col items-center justify-center pt-14 align-middle"
       {...storyblokEditable(blok)}
     >
-      <div className="flex flex-col w-full justify-center items-center">
-        <div className="relative w-full h-[75vh] mb-6">
+      <div className="flex w-full flex-col items-center justify-center">
+        <div className="relative mb-6 h-[75vh] w-full">
           <Image
             className="object-cover object-center"
             fill
@@ -24,12 +24,12 @@ const Article = ({ blok }: ArticleProps) => {
             alt={image.alt}
           />
         </div>
-        <h1 className="text-5xl font-bold text-center my-4 px-6">{title}</h1>
-        <h2 className="text-2xl font-regular text-center mb-8 px-6">
+        <h1 className="my-4 px-6 text-center text-5xl font-bold">{title}</h1>
+        <h2 className="font-regular mb-8 px-6 text-center text-2xl">
           {subtitle}
         </h2>
       </div>
-      <div className="flex flex-col w-full max-w-xl px-6">
+      <div className="flex w-full max-w-xl flex-col px-6">
         <RichText document={content} />
       </div>
     </article>

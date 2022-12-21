@@ -3,7 +3,7 @@ import Image from "next/image";
 import { storyblokEditable } from "@storyblok/react";
 import { imageDimensions } from "../utils/imageDimensions";
 import Link from "next/link";
-import TagList from "./TagList";
+import TagList from "../components/TagList";
 
 type ProjectPreviewProps = {
   blok: Blok<SbProject>;

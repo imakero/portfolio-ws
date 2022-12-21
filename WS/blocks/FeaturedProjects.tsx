@@ -1,5 +1,5 @@
 import { storyblokEditable } from "@storyblok/react";
-import ProjectPreview from "../components/ProjectPreview";
+import ProjectPreview from "../block-components/ProjectPreview";
 import { Blok, SbFeaturedProjects } from "../types/Types";
 
 type FeaturedProjectsProps = {

@@ -1,5 +1,5 @@
 import { StoryData } from "@storyblok/react";
-import Header from "../components/Header";
+import Header from "../blocks/Header";
 import { Blok, SbNavigation } from "../types/Types";
 
 type LayoutProps = {

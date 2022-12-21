@@ -1,7 +1,7 @@
 import { storyblokEditable, StoryblokComponent } from "@storyblok/react";
 import { useState } from "react";
 import { Blok, SbNavigation } from "../types/Types";
-import MenuIcon from "./icons/MenuIcon";
+import MenuIcon from "../components/icons/MenuIcon";
 
 type NavigationProps = {
   blok: Blok<SbNavigation>;
