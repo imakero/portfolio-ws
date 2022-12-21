@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useState } from "react";
-import { srcDimensions } from "../utils/imageDimensions";
+import { sbImageDimensions } from "../utils/image";
 
 Image;
 
@@ -11,7 +11,7 @@ type ZoomableImageProps = {
 
 const ZoomableImage = ({ src, alt }: ZoomableImageProps) => {
   const [isOpen, setIsOpen] = useState(false);
-  const { width, height } = srcDimensions(src);
+  const { width, height } = sbImageDimensions(src);
 
   return (
     <>

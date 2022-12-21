@@ -1,7 +1,7 @@
 import { Blok, SbProject } from "../types/Types";
 import Image from "next/image";
 import { storyblokEditable } from "@storyblok/react";
-import { imageDimensions } from "../utils/imageDimensions";
+import { imageDimensions } from "../utils/image";
 import Link from "next/link";
 import TagList from "../components/TagList";
 

@@ -1,7 +1,7 @@
 import { storyblokEditable } from "@storyblok/react";
 import Image from "next/image";
 import { Blok, SbProject } from "../types/Types";
-import { imageDimensions } from "../utils/imageDimensions";
+import { imageDimensions } from "../utils/image";
 import Blob from "../components/Blob";
 import RichText from "../components/richtext/RichText";
 
