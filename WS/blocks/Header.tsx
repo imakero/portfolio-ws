@@ -1,4 +1,4 @@
-import { SbBlokData, StoryData } from "@storyblok/react";
+import { StoryData } from "@storyblok/react";
 import Link from "next/link";
 import { Blok, SbNavigation } from "../types/Types";
 import GitHubIcon from "../components/icons/GitHubIcon";
@@ -16,6 +16,7 @@ const Header = ({ story }: HeaderProps) => {
           href="http://www.github.com/imakero"
           target="_blank"
           rel="noreferrer"
+          aria-label="Visit my GitHub."
           className="fill-white font-extralight text-white  hover:fill-secondary hover:text-secondary"
         >
           <GitHubIcon />

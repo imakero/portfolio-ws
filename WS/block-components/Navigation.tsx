@@ -27,6 +27,7 @@ const Navigation = ({ blok }: NavigationProps) => {
       {!menuOpen && (
         <button
           className="z-10 block fill-white md:hidden"
+          aria-label="Open menu."
           onClick={() => setMenuOpen((previous) => !previous)}
         >
           <MenuIcon />
