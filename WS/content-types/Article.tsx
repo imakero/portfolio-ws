@@ -16,14 +16,16 @@ const Article = ({ blok }: ArticleProps) => {
       {...storyblokEditable(blok)}
     >
       <div className="flex w-full flex-col items-center justify-center">
-        <div className="relative mb-6 h-[75vh] w-full">
-          <Image
-            className="object-cover object-center"
-            fill
-            src={image.filename}
-            alt={image.alt}
-          />
-        </div>
+        {image && (
+          <div className="relative mb-6 h-[75vh] w-full">
+            <Image
+              className="object-cover object-center"
+              fill
+              src={image.filename}
+              alt={image.alt}
+            />
+          </div>
+        )}
         <h1 className="my-4 px-6 text-center text-5xl font-bold">{title}</h1>
         <h2 className="font-regular mb-8 px-6 text-center text-2xl">
           {subtitle}
