@@ -46,11 +46,14 @@ const RichText = ({ document }: RichTextProps) => (
           if (Array.isArray(children)) {
             const modifiedChildren = [];
             const current: React.ReactNode[] = [];
-            for (let child of children) {
+            for (let i = 0; i < children.length; i++) {
+              const child = children[i];
               if (child.type === ZoomableImage) {
                 if (current.length) {
                   modifiedChildren.push(
-                    <p className="mb-6 last:mb-0">{current}</p>
+                    <p className="mb-6 last:mb-0" key={i}>
+                      {current}
+                    </p>
                   );
                 }
                 modifiedChildren.push(child);
@@ -60,7 +63,9 @@ const RichText = ({ document }: RichTextProps) => (
             }
             if (current.length) {
               modifiedChildren.push(
-                <p className="mb-6 last:mb-0">{current}</p>
+                <p className="mb-6 last:mb-0" key={children.length}>
+                  {current}
+                </p>
               );
             }
 
