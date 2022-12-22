@@ -71,7 +71,7 @@ const ContactForm = ({ blok }: ContactFormProps) => {
 
   return (
     <div
-      className="flex min-h-[500px] w-screen max-w-lg flex-col items-center justify-center p-8 "
+      className="flex min-h-[500px] w-screen max-w-lg flex-col items-center justify-center p-8 lg:max-w-sm "
       {...storyblokEditable(blok)}
     >
       <div className="w-full">
