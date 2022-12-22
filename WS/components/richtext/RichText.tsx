@@ -4,6 +4,7 @@ import Heading from "./Heading";
 import CodeBlock from "./CodeBlock";
 import Link from "./Link";
 import ZoomableImage from "../ZoomableImage";
+import ImageBlok from "../../block-components/Image";
 
 type RichTextProps = {
   document: Richtext;
@@ -12,6 +13,9 @@ type RichTextProps = {
 const RichText = ({ document }: RichTextProps) => (
   <>
     {render(document, {
+      blokResolvers: {
+        image: (props) => <ImageBlok blok={props} />,
+      },
       markResolvers: {
         bold: (children) => <strong className="font-bold">{children}</strong>,
         italic: (children) => <em className="italic">{children}</em>,
