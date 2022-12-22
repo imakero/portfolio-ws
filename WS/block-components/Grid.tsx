@@ -8,7 +8,7 @@ type GridProps = {
 const Grid = ({ blok }: GridProps) => {
   return (
     <div
-      className="grid grid-cols-1 justify-items-center lg:grid-cols-2 gap-y-24 w-full "
+      className="grid w-full grid-cols-1 justify-items-center gap-y-24 lg:grid-cols-2 "
       {...storyblokEditable(blok)}
     >
       {blok.items.map((nestedBlok) => (

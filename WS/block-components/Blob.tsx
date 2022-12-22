@@ -11,7 +11,7 @@ const Blob = ({ blok }: BlobProps) => {
 
   return (
     <div {...storyblokEditable(blok)}>
-      <BlobWrapper id={blobId} className="max-w-lg lg:max-w-md">
+      <BlobWrapper id={blobId} className="max-w-lg lg:max-w-sm">
         {blok.body.map((nestedBlok) => (
           <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
         ))}
