@@ -12,6 +12,7 @@ export type Blok<BlokType = {}> = SbBlokData & BlokType;
 
 export type SbContactForm = {
   form: Blok<SbForm>[];
+  response: Richtext;
 };
 
 export type SbForm = {

@@ -1,6 +1,11 @@
 import { Blok, SbForm } from "../types/Types";
 import { Formik, Form as FormikForm, FormikHelpers } from "formik";
-import { StoryblokComponent, storyblokEditable } from "@storyblok/react";
+import {
+  Richtext,
+  StoryblokComponent,
+  storyblokEditable,
+} from "@storyblok/react";
+import RichText from "../components/richtext/RichText";
 
 type FormProps = {
   blok: Blok<SbForm>;
@@ -12,11 +17,18 @@ type FormProps = {
   validate: (values: { [index: string]: string }) => {
     [index: string]: string;
   };
+  response: Richtext;
 };
 
-const Form = ({ blok, initialValues, onSubmit, validate }: FormProps) => {
+const Form = ({
+  blok,
+  initialValues,
+  onSubmit,
+  validate,
+  response,
+}: FormProps) => {
   return (
-    <div className="flex w-full items-center" {...storyblokEditable(blok)}>
+    <div {...storyblokEditable(blok)}>
       <Formik
         initialValues={initialValues}
         onSubmit={onSubmit}
@@ -24,7 +36,7 @@ const Form = ({ blok, initialValues, onSubmit, validate }: FormProps) => {
       >
         {({ status, errors, touched }) => {
           return status?.status === "submitted" ? (
-            <div>{status.message}</div>
+            <RichText document={response} />
           ) : (
             <div className="w-full space-y-6">
               <FormikForm>

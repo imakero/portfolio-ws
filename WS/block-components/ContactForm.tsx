@@ -80,6 +80,7 @@ const ContactForm = ({ blok }: ContactFormProps) => {
           initialValues={initialValues}
           onSubmit={onSubmit}
           validate={validate}
+          response={blok.response}
         />
       </div>
     </div>
