@@ -71,15 +71,17 @@ const ContactForm = ({ blok }: ContactFormProps) => {
 
   return (
     <div
-      className="flex min-h-[500px] flex-col justify-center"
+      className="flex min-h-[500px] w-screen max-w-lg flex-col items-center justify-center p-8 "
       {...storyblokEditable(blok)}
     >
-      <Form
-        blok={blok.form[0]}
-        initialValues={initialValues}
-        onSubmit={onSubmit}
-        validate={validate}
-      />
+      <div className="w-full">
+        <Form
+          blok={blok.form[0]}
+          initialValues={initialValues}
+          onSubmit={onSubmit}
+          validate={validate}
+        />
+      </div>
     </div>
   );
 };

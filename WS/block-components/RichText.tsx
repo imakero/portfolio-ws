@@ -7,7 +7,7 @@ type RichTextProps = {
 };
 
 const RichText = ({ blok }: RichTextProps) => (
-  <div className="p-4 sm:p-8" {...storyblokEditable(blok)}>
+  <div className="p-8 sm:p-8" {...storyblokEditable(blok)}>
     <RenderRichText document={blok.content} />
   </div>
 );

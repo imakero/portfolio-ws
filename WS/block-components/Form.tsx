@@ -16,7 +16,7 @@ type FormProps = {
 
 const Form = ({ blok, initialValues, onSubmit, validate }: FormProps) => {
   return (
-    <div className="w-80 p-4" {...storyblokEditable(blok)}>
+    <div className="flex w-full items-center" {...storyblokEditable(blok)}>
       <Formik
         initialValues={initialValues}
         onSubmit={onSubmit}
@@ -26,7 +26,7 @@ const Form = ({ blok, initialValues, onSubmit, validate }: FormProps) => {
           return status?.status === "submitted" ? (
             <div>{status.message}</div>
           ) : (
-            <div className="space-y-6">
+            <div className="w-full space-y-6">
               <FormikForm>
                 <div className="mb-6 flex flex-col space-y-6">
                   {blok.fields.map((nestedBlok) => (
