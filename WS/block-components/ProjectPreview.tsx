@@ -30,6 +30,7 @@ const ProjectPreview = ({ tags, blok, slug }: ProjectPreviewProps) => {
             fill
             src={image.filename}
             alt={image.alt}
+            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
           />
         </div>
         <div className="absolute top-0 left-0 flex h-full w-full flex-col items-center justify-center space-y-2 overflow-hidden rounded-md bg-primary text-white opacity-0 transition-opacity duration-300 hover:opacity-95">

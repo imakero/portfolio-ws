@@ -21,6 +21,7 @@ const ArticlePreview = ({ article }: ArticlePreviewProps) => {
               fill
               src={image.filename}
               alt={image.alt}
+              sizes="640w"
             />
           </div>
           <h2 className="text-2xl font-bold">{title}</h2>

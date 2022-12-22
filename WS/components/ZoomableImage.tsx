@@ -27,6 +27,7 @@ const ZoomableImage = ({ src, alt }: ZoomableImageProps) => {
           fill
           src={src}
           alt={alt}
+          sizes="max-width(576px): 100vw, 576w"
         />
       </div>
       <div

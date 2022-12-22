@@ -23,6 +23,7 @@ const Article = ({ blok }: ArticleProps) => {
               fill
               src={image.filename}
               alt={image.alt}
+              sizes="100vw"
             />
           </div>
         )}
