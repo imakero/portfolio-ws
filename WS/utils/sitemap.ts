@@ -14,7 +14,7 @@ export const generateSitemap = async (paths: Path[]) => {
 
     return `
         <url>
-            <loc>${`${url}`}</loc>
+            <loc>${url}</loc>
             <lastmod>${new Date().toISOString()}</lastmod>
             <changefreq>monthly</changefreq>
             <priority>1.0</priority>
@@ -27,7 +27,7 @@ export const generateSitemap = async (paths: Path[]) => {
         </urlset>`;
 
   //Create robots.txt structure
-  const robots = `Sitemap: ${siteUrl}sitemap.xml
+  const robots = `Sitemap: ${siteUrl}/sitemap.xml
     User-agent: *
     Allow: /*
     Disallow: /api/*`;
