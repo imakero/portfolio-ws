@@ -1,9 +1,8 @@
 import { storyblokEditable } from "@storyblok/react";
 import { Blok, SbProject } from "../types/Types";
-import { imageDimensions } from "../utils/image";
 import Blob from "../components/Blob";
 import RichText from "../components/richtext/RichText";
-import ZoomableImage from "../components/ZoomableImage";
+import ImageGallery from "../components/ImageGallery";
 
 type ProjectProps = {
   blok: Blok<SbProject>;
@@ -12,7 +11,6 @@ type ProjectProps = {
 
 const Project = ({ blok }: ProjectProps) => {
   const { description, gallery } = blok;
-  const { width, height } = imageDimensions(gallery[0]);
 
   return (
     <article
@@ -21,13 +19,7 @@ const Project = ({ blok }: ProjectProps) => {
     >
       <Blob id={2} className="max-w-lg">
         <div className="p-4">
-          <div
-            className={`relative mb-8 w-full`}
-            style={{ aspectRatio: `${width} / ${height}` }}
-          >
-            <ZoomableImage src={gallery[0].filename} alt={gallery[0].alt} />
-          </div>
-
+          <ImageGallery images={gallery} />
           <RichText document={description} />
         </div>
       </Blob>
